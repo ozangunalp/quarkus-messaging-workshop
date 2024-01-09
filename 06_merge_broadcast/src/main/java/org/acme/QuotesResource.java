@@ -20,9 +20,12 @@ public class QuotesResource {
     @Outgoing("processed")
     public Targeted process(ConsumerRecord<String, Double> record) {
         Log.infof("Processing %s with price %f", record.key(), record.value());
-        return Targeted.of("processed-product", record.key())
-                .with("processed-price", Math.floor(record.value()))
-                .with("processed", new Quote(record.key(), record.value()));
+        Targeted with = Targeted.of("processed-product", record.key())
+                .with("processed-price", Math.floor(record.value()));
+        if (record.value() > 10.0) {
+            with.with("processed", new Quote(record.key(), record.value()));
+        }
+        return with;
     }
 
     public enum QuoteSplit {

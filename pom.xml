@@ -3,31 +3,25 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>io.smallrye</groupId>
-    <artifactId>smallrye-parent</artifactId>
-    <version>41</version>
-  </parent>
-
   <groupId>io.quarkus</groupId>
-  <artifactId>quarkus-reactive-messaging-workshop</artifactId>
+  <artifactId>quarkus-messaging-workshop</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <name>Quarkus Reactive Messaging Workshop</name>
+  <name>Quarkus Messaging Workshop</name>
 
   <properties>
     <compiler-plugin.version>3.11.0</compiler-plugin.version>
     <maven.compiler.release>17</maven.compiler.release>
+    <maven.compiler.parameters>true</maven.compiler.parameters>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
     <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
-    <quarkus.platform.version>999-SNAPSHOT</quarkus.platform.version>
-<!--    <quarkus.platform.version>3.4.1</quarkus.platform.version>-->
-    <smallrye.reactive.messaging.version>4.10.1</smallrye.reactive.messaging.version>
+    <quarkus.platform.version>3.6.4</quarkus.platform.version>
+    <smallrye.reactive.messaging.version>4.15.0</smallrye.reactive.messaging.version>
     <skipITs>true</skipITs>
-    <surefire-plugin.version>3.0.0</surefire-plugin.version>
+    <surefire-plugin.version>3.2.3</surefire-plugin.version>
   </properties>
 
   <modules>
@@ -55,6 +49,11 @@
         <version>${smallrye.reactive.messaging.version}</version>
         <type>pom</type>
         <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.assertj</groupId>
+        <artifactId>assertj-core</artifactId>
+        <version>3.24.2</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

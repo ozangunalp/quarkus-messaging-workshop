@@ -6,9 +6,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 
 import org.eclipse.microprofile.reactive.messaging.Message;
 
-import io.opentelemetry.context.ContextKey;
 import io.smallrye.reactive.messaging.MessageConverter;
-import io.smallrye.reactive.messaging.TracingMetadata;
 
 @ApplicationScoped
 public class QuoteMessageConverter implements MessageConverter {

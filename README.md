@@ -1,4 +1,4 @@
-# Smallrye Reactive Messaging Workshop Examples with Quarkus
+# Quarkus Messaging Workshop
 
 1. Basics
 2. Emitters & Channels (Connector configuration)
@@ -10,4 +10,4 @@
 8. Decorators & Interceptors
 9. Testing
 10. Smallrye Health Checks
-11. OpenTelemetry Tracing
+11. Observability Micrometer Metrics & OpenTelemetry Tracing
